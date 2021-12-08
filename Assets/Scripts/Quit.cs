@@ -54,5 +54,5 @@ public class Quit : MonoBehaviour
         objectToDisable.SetActive(true);
     }
 
-
+     
 }

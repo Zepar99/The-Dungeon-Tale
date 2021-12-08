@@ -11,6 +11,10 @@ public class Stopwatch : MonoBehaviour
     public bool stopWatchActive = true;
     public float currentTime;
     public Text currentTimeText;
+    public GameObject objectToDisable;
+    public GameObject objectToEnable;
+    public string scene;
+    public string menu;
 
 
     void Update()
@@ -28,8 +32,24 @@ public class Stopwatch : MonoBehaviour
     }
     public void stopTime()
     {
+         objectToEnable.SetActive(true);
+         Time.timeScale = 0f;
         stopWatchActive = false;
 
+
     }
+     public void Retry()
+    {
+        objectToDisable.SetActive(false);
+         Time.timeScale = 1f;
+        SceneManager.LoadScene(scene);
+
+    }
+    public void Menu()
+    {
+         SceneManager.LoadScene(menu);
+         Time.timeScale = 1f;
+    }
+    
 
 }
