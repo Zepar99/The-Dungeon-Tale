@@ -3,13 +3,10 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float Speed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
+    public float Speed;
+    public float jumpHeight;
+    public float gravityScale;
     private float moveDirection = 0;
-
-    // public Animator animator;
-    // public score scoreControll;
     public Animator animator;
 
 
