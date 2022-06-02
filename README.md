@@ -1,6 +1,9 @@
 # The-Dungeion-Tail
 **In this game you have to control two players using one controller and complete the levles to free out of dungeon.**
 
+# Download this game on
+[https://pratikborse.itch.io/](https://pratikborse.itch.io/)
+
 # Features 
 - Theme Based Game( controlling many)
 - Implementation of Player controls for 2-Players using 1 controller 
