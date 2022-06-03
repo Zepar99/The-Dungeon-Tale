@@ -1,5 +1,5 @@
 # The-Dungeon-Tail
-**In this game you have to control two players using one controller and complete the levles to free out of dungeon.**
+**In this game you have to control two players using one controller and complete the levles within given time to free out of dungeon.**
 
 # Download this game on
 [https://pratikborse.itch.io/](https://pratikborse.itch.io/)
