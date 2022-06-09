@@ -8,7 +8,7 @@ public class PlayerModel
     public float Speed { get; }
     public float jumpHeight { get; }
     public float gravityScale { get; }
-    public float moveDirection { get; set; }
+    public float moveDirection { get; set; } = 0;
     public bool isGrounded { get; set; }
     public bool isfacingRight { get; set; } = true;
 

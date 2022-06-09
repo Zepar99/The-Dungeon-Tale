@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerView: {fileID: 4622654254415424157, guid: 1e741d1907ac9b044a5525f7e2f14164, type: 3}
   Speed: 5
-  jumpHeight: 5
+  jumpHeight: 8
   gravityScale: 1.5
   moveDirection: 0
   isGrounded: 1

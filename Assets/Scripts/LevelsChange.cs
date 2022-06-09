@@ -20,8 +20,6 @@ public class LevelsChange : MonoBehaviour
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel());
-
-
     }
     IEnumerator LoadLevel()
     {

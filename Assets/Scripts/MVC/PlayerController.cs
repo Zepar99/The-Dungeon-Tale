@@ -4,8 +4,8 @@ public class PlayerController
 {
     public PlayerModel playerModel;
     PlayerView playerView;
-    Transform t;
-    BoxCollider2D mainCollider;
+
+    public BoxCollider2D mainCollider;
 
     public PlayerController(PlayerView _playerView, PlayerModel _playerModel)
     {
@@ -13,6 +13,7 @@ public class PlayerController
         playerModel = _playerModel;
         playerView.SetPlayerController(this);
     }
+
     public void movementcontrols()
     {
 

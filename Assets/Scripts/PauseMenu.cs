@@ -4,34 +4,22 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPause = false;
     public GameObject pausemenuUI;
-    public GameObject objectToDisable;
+    public AudioSource audioSource;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPause)
-            {
-                resume();
-            }
-            else
-            {
-                pause();
-            }
+            pausemenuUI.SetActive(true);
+            GameState currentGameState = GmaeStateManager.Instance.currentGameState;
+            GameState newGameState = currentGameState == GameState.Gameplay
+               ? GameState.Paused
+               : GameState.Gameplay;
+            GmaeStateManager.Instance.SetState(newGameState);
         }
+
     }
 
-    public void resume()
-    {
-        pausemenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPause = false;
-    }
-    void pause()
-    {
-        pausemenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPause = true;
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -40,6 +28,15 @@ public class PauseMenu : MonoBehaviour
             QuitGame();
         }
     }
+    public void Resume()
+    {
+        GameState currentGameState = GmaeStateManager.Instance.currentGameState;
+        GameState newGameState = currentGameState == GameState.Gameplay
+            ? GameState.Gameplay
+            : GameState.Paused;
+
+        pausemenuUI.SetActive(false);
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -47,11 +44,11 @@ public class PauseMenu : MonoBehaviour
     }
     public void MusicOff()
     {
-        objectToDisable.SetActive(false);
+        audioSource.Pause();
     }
     public void MusicOn()
     {
-        objectToDisable.SetActive(true);
+        audioSource.UnPause();
     }
 
 

@@ -28,28 +28,32 @@ public class Stopwatch : MonoBehaviour
             }
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
-        currentTimeText.text = "TIME LEFT : " + time.Minutes.ToString("00") + ":" + time.Seconds.ToString("00") + ":" + time.Milliseconds.ToString("0");
+        currentTimeText.text = "TIME LEFT : " + time.Minutes.ToString("00") + ":" + time.Seconds.ToString("00");
     }
     public void stopTime()
     {
-         objectToEnable.SetActive(true);
-         Time.timeScale = 0f;
+        objectToEnable.SetActive(true);
+        GameState currentGameState = GmaeStateManager.Instance.currentGameState;
+        GameState newGameState = currentGameState == GameState.Gameplay
+           ? GameState.Gameloose
+           : GameState.Gameplay;
+        GmaeStateManager.Instance.SetState(newGameState);
         stopWatchActive = false;
 
 
     }
-     public void Retry()
+    public void Retry()
     {
         objectToDisable.SetActive(false);
-         Time.timeScale = 1f;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
 
     }
     public void Menu()
     {
-         SceneManager.LoadScene(menu);
-         Time.timeScale = 1f;
+        SceneManager.LoadScene(menu);
+        Time.timeScale = 1f;
     }
-    
+
 
 }
